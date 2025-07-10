@@ -1,2 +1,3 @@
-# Farmacia
+# InfoFarma
 Projeto de PSI
+
