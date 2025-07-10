@@ -71,5 +71,7 @@ RF29: Uso de extends/includes para layout.RF30: Páginas de erro personalizadas.
 
 8. Requisitos Técnicos 
 RF30: Uso de request, redirect, url_for, make_response.
+
 RF31: Código versionado no GitHub com entregas semanais. 
+
 RF32: README com instruções de execução e estrutura do sistema.
