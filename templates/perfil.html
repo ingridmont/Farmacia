@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Meu Perfil{% endblock %}
+{% block content %}
+    <h2>Dados do Usuário</h2>
+    <p><strong>Email:</strong> {{ usuario['email'] }}</p>
+
+    <a href="{{ url_for('editar_perfil') }}">Editar dados</a>
+
+    <form action="{{ url_for('excluir_conta') }}" method="POST" onsubmit="return confirm('Tem certeza que deseja excluir sua conta?')">
+        <button type="submit">Excluir minha conta</button>
+    </form>
+{% endblock %}
