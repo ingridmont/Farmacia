@@ -1,5 +1,6 @@
+# app.py
 from flask import Flask, render_template, request, redirect, url_for, flash
-from flask_login import LoginManager, login_user, logout_user, login_required
+from flask_login import LoginManager, login_user, logout_user, login_required, current_user
 from werkzeug.security import generate_password_hash, check_password_hash
 
 from database import obter_conexao
@@ -80,4 +81,44 @@ def logout():
     flash('Você saiu com sucesso.', 'success')
     return redirect(url_for('index'))
 
+# CRUD do próprio usuário
 
+@app.route('/perfil')
+@login_required
+def perfil():
+    conn = obter_conexao()
+    usuario = conn.execute("SELECT * FROM users WHERE id = ?", (current_user.id,)).fetchone()
+    conn.close()
+    return render_template('perfil.html', usuario=usuario)
+
+@app.route('/editar-perfil', methods=['GET', 'POST'])
+@login_required
+def editar_perfil():
+    conn = obter_conexao()
+
+    if request.method == 'POST':
+        novo_email = request.form['email']
+        nova_senha = generate_password_hash(request.form['senha'])
+
+        conn.execute("UPDATE users SET email = ?, senha = ? WHERE id = ?", (novo_email, nova_senha, current_user.id))
+        conn.commit()
+        conn.close()
+
+        flash('Dados atualizados com sucesso!', 'success')
+        return redirect(url_for('perfil'))
+
+    usuario = conn.execute("SELECT * FROM users WHERE id = ?", (current_user.id,)).fetchone()
+    conn.close()
+    return render_template('editar_perfil.html', usuario=usuario)
+
+@app.route('/excluir-conta', methods=['POST'])
+@login_required
+def excluir_conta():
+    conn = obter_conexao()
+    conn.execute("DELETE FROM users WHERE id = ?", (current_user.id,))
+    conn.commit()
+    conn.close()
+
+    logout_user()
+    flash('Sua conta foi excluída com sucesso.', 'success')
+    return redirect(url_for('index'))
