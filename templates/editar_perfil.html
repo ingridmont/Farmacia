@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}Editar Perfil{% endblock %}
+{% block content %}
+    <h2>Editar meus dados</h2>
+    <form method="POST">
+        Novo email:<br>
+        <input type="email" name="email" value="{{ usuario['email'] }}" required><br><br>
+
+        Nova senha:<br>
+        <input type="password" name="senha" required><br><br>
+
+        <button type="submit">Salvar alterações</button>
+    </form>
+{% endblock %}
