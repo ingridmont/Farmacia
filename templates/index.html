@@ -4,20 +4,47 @@
 <p style="font-size: 1.1rem; color: #555;">Confira alguns dos nossos produtos em destaque:</p>
 
 <h2>PROMOÇÕES ESPECIAIS</h2>
-
-<div class="promocoes">
-    <div class="promocao">
-        <img src="{{ url_for('static', filename='img/vitamina.png') }}" alt="Promoção 1">
-        <h3>Desconto de 20% em Vitaminas</h3>
-        <p>Reforce sua imunidade com nossas vitaminas em promoção!</p>
-        <button>Ver Promoção</button>
+<div class="promocoes-container">
+    <button class="scrooll-btn left" onclick="scrollPromos(-1)"><</button>
+    <div class="promocoes" id="promoScroll">
+        <div class="promocao">
+            <img src="{{ url_for('static', filename='img/vitamina.png') }}" alt="Promoção 1">
+            <h3>Desconto de 20% em Vitaminas</h3>
+            <p>Reforce sua imunidade com nossas vitaminas em promoção!</p>
+            <button>Ver Promoção</button>
+        </div>
+        <div class="promocao">
+            <img src="{{ url_for('static', filename='img/promocao2.png') }}" alt="Promoção 2">
+            <h3>Compre 2, Leve 3 em Fraldas</h3>
+            <p>Ofertas imperdíveis para o cuidado do seu bebê!</p>
+            <button>Ver Promoção</button>
+        </div>
+        <div class="promocao">
+            <img src="{{ url_for('static', filename='img/vitamina.png') }}" alt="Promoção 1">
+            <h3>Desconto de 20% em Vitaminas</h3>
+            <p>Reforce sua imunidade com nossas vitaminas em promoção!</p>
+            <button>Ver Promoção</button>
+        </div>
+        <div class="promocao">
+            <img src="{{ url_for('static', filename='img/promocao2.png') }}" alt="Promoção 2">
+            <h3>Compre 2, Leve 3 em Fraldas</h3>
+            <p>Ofertas imperdíveis para o cuidado do seu bebê!</p>
+            <button>Ver Promoção</button>
+        </div>
+        <div class="promocao">
+            <img src="{{ url_for('static', filename='img/vitamina.png') }}" alt="Promoção 1">
+            <h3>Desconto de 20% em Vitaminas</h3>
+            <p>Reforce sua imunidade com nossas vitaminas em promoção!</p>
+            <button>Ver Promoção</button>
+        </div>
+        <div class="promocao">
+            <img src="{{ url_for('static', filename='img/promocao2.png') }}" alt="Promoção 2">
+            <h3>Compre 2, Leve 3 em Fraldas</h3>
+            <p>Ofertas imperdíveis para o cuidado do seu bebê!</p>
+            <button>Ver Promoção</button>
+        </div>
     </div>
-    <div class="promocao">
-        <img src="{{ url_for('static', filename='img/promocao2.png') }}" alt="Promoção 2">
-        <h3>Compre 2, Leve 3 em Fraldas</h3>
-        <p>Ofertas imperdíveis para o cuidado do seu bebê!</p>
-        <button>Ver Promoção</button>
-    </div>
+    <button class="scroll-btn right" onclick="scrollPromos(1)">></button>
 </div>
 
 <h2>Espaço Mais Saúde</h2>
