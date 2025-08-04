@@ -1,8 +1,7 @@
 # app.py
-from flask import Flask, render_template, request, redirect, url_for, flash
+from flask import Flask, render_template, request, redirect, url_for, flash, make_response
 from flask_login import LoginManager, login_user, logout_user, login_required, current_user
 from werkzeug.security import generate_password_hash, check_password_hash
-
 from database import obter_conexao
 from modelos import User
 
@@ -19,7 +18,9 @@ def load_user(user_id):
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    response = make_response(render_template('index.html'))
+    response.set_cookie('visitante', '1')
+    return response
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -81,8 +82,6 @@ def logout():
     flash('Você saiu com sucesso.', 'success')
     return redirect(url_for('index'))
 
-# CRUD do próprio usuário
-
 @app.route('/perfil')
 @login_required
 def perfil():
@@ -122,3 +121,12 @@ def excluir_conta():
     logout_user()
     flash('Sua conta foi excluída com sucesso.', 'success')
     return redirect(url_for('index'))
+
+@app.errorhandler(404)
+def pagina_nao_encontrada(error):
+    return render_template('404.html'), 404
+
+@app.errorhandler(500)
+def erro_interno(error):
+    return render_template('500.html'), 500
+
