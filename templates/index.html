@@ -3,45 +3,103 @@
 <h1 style="color: #2e7d32; font-size: 2rem;">🛒 Bem-vindo à InfoFarma</h1>
 <p style="font-size: 1.1rem; color: #555;">Confira alguns dos nossos produtos em destaque:</p>
 
-    <div class="produtos">
-        <div class="produto">
-            <img src="{{ url_for('static', filename='img/remedio1.png') }}" alt="Analgésico">
-            <h3>Analgésico 500mg</h3>
-            <p>Alívio rápido da dor e febre.</p>
-            <button>Ver mais</button>
-        </div>
+<h2>PROMOÇÕES ESPECIAIS</h2>
 
-        <div class="produto">
-            <img src="{{ url_for('static', filename='img/vitamina.png') }}" alt="Vitamina C">
-            <h3>Vitamina C 1g</h3>
-            <p>Reforce sua imunidade diariamente.</p>
-            <button>Ver mais</button>
-        </div>
-
-        <div class="produto">
-            <img src="{{ url_for('static', filename='img/alcoolgel.png') }}" alt="Álcool em Gel">
-            <h3>Álcool em Gel 70%</h3>
-            <p>Proteção prática para o dia a dia.</p>
-            <button>Ver mais</button>
-        </div>
-
-        <div class="produto">
-            <img src="{{ url_for('static', filename='img/vitaminab12.png') }}" alt="vitamina B12">
-            <h3>Vitamina B12</h3>
-            <p></p>
-            <button>Ver mais</button>
-        </div>
-        <div class="produto">
-            <img src="{{ url_for('static', filename='img/huggies.jpeg') }}" alt="Fraldas huggies">
-            <h3>Fraldas huggies</h3>
-            <p></p>
-            <button>Ver mais</button>
-        </div>
-        <div class="produto">
-            <img src="{{ url_for('static', filename='img/pampers.jpeg') }}" alt="Fraldas pampers">
-            <h3>Fraldas pampers</h3>
-            <p></p>
-            <button>Ver mais</button>
-        </div>
+<div class="promocoes">
+    <div class="promocao">
+        <img src="{{ url_for('static', filename='img/vitamina.png') }}" alt="Promoção 1">
+        <h3>Desconto de 20% em Vitaminas</h3>
+        <p>Reforce sua imunidade com nossas vitaminas em promoção!</p>
+        <button>Ver Promoção</button>
     </div>
+    <div class="promocao">
+        <img src="{{ url_for('static', filename='img/promocao2.png') }}" alt="Promoção 2">
+        <h3>Compre 2, Leve 3 em Fraldas</h3>
+        <p>Ofertas imperdíveis para o cuidado do seu bebê!</p>
+        <button>Ver Promoção</button>
+    </div>
+</div>
+
+<h2>Espaço Mais Saúde</h2>
+<div class="diversos">
+    <div class="espaço"> 
+        <img src="{{ url_for('static', filename='img/telessaude.png') }}" alt="Telessaúde">
+        <h3>Telessaúde</h3>
+        <p>Consuçtas virtuais, diagnósticos à distância e acompanhamento.</p>
+        <button>Ver mais</button>
+    </div>
+
+    <div class="espaço"> 
+        <img src="{{ url_for('static', filename='img/teste.png') }}" alt="Testes de COVID">
+        <h3>Testes de COVID</h3>
+        <p>Realize seu teste com segurança e rapidez em nossa farmácias</p>
+        <button>Agendar seu teste</button>
+    </div>
+
+    <div class="espaço"> 
+        <img src="{{ url_for('static', filename='img/contra.png') }}" alt="Vacinas">
+        <h3>Vacina contra a gripe</h3>
+        <p>Na InfoFarma você encontra vacina tetravalente contra a gripe</p>
+        <button>Consultar vacinas</button>
+    </div>
+
+    <div class="espaço"> 
+        <img src="{{ url_for('static', filename='img/examecli.png') }}" alt="Exames clínicos">
+        <h3>Exames clínicos</h3>
+        <p>Exame de dengue, gravidez, tireóide, entre outros</p>
+        <button>Conferir exames</button>
+    </div>
+
+    <div class="espaço"> 
+        <img src="{{ url_for('static', filename='img/serviçosinfo.png') }}" alt="Serviços infofarma">
+        <h3>Serviços InfoFarma</h3>
+        <p>Bioimpedância, pressão arterial, curativo, glicemia e mais.</p>
+        <button>Conferir serviços</button>
+    </div>
+
+</div>
+
+<h2>MAIS PROCURADOS</h2>
+
+<div class="produtos">
+    <div class="produto">
+        <img src="{{ url_for('static', filename='img/remedio1.png') }}" alt="Analgésico">
+        <h3>Analgésico 500mg</h3>
+        <p>Alívio rápido da dor e febre.</p>
+        <button>Ver mais</button>
+    </div>
+
+    <div class="produto">
+        <img src="{{ url_for('static', filename='img/vitamina.png') }}" alt="Vitamina C">
+        <h3>Vitamina C 1g</h3>
+        <p>Reforce sua imunidade diariamente.</p>
+        <button>Ver mais</button>
+    </div>
+
+    <div class="produto">
+        <img src="{{ url_for('static', filename='img/alcoolgel.png') }}" alt="Álcool em Gel">
+        <h3>Álcool em Gel 70%</h3>
+        <p>Proteção prática para o dia a dia.</p>
+        <button>Ver mais</button>
+    </div>
+
+    <div class="produto">
+        <img src="{{ url_for('static', filename='img/vitaminab12.png') }}" alt="vitamina B12">
+        <h3>Vitamina B12</h3>
+        <p>Suplemento essencial para energia e saúde neurológica.</p>
+        <button>Ver mais</button>
+    </div>
+    <div class="produto">
+        <img src="{{ url_for('static', filename='img/huggies.jpeg') }}" alt="Fraldas huggies">
+        <h3>Fraldas huggies</h3>
+        <p>Conforto e proteção para o seu bebê dia e noite.</p>
+        <button>Ver mais</button>
+    </div>
+    <div class="produto">
+        <img src="{{ url_for('static', filename='img/pampers.jpeg') }}" alt="Fraldas pampers">
+        <h3>Fraldas pampers</h3>
+        <p>Toque macio, ajuste seguro e até 12h de absorção.</p>
+        <button>Ver mais</button>
+    </div>
+</div>
 {% endblock %}
