@@ -1,6 +1,47 @@
 {% extends 'base.html' %}
-{% block title %}Início{% endblock %}
 {% block content %}
-    <h1>Bem-vindo à InfoFarma</h1>
-    <p>Sistema de farmácia para clientes e atendentes.</p>
+<h1 style="color: #2e7d32; font-size: 2rem;">🛒 Bem-vindo à InfoFarma</h1>
+<p style="font-size: 1.1rem; color: #555;">Confira alguns dos nossos produtos em destaque:</p>
+
+    <div class="produtos">
+        <div class="produto">
+            <img src="{{ url_for('static', filename='img/remedio1.png') }}" alt="Analgésico">
+            <h3>Analgésico 500mg</h3>
+            <p>Alívio rápido da dor e febre.</p>
+            <button>Ver mais</button>
+        </div>
+
+        <div class="produto">
+            <img src="{{ url_for('static', filename='img/vitamina.png') }}" alt="Vitamina C">
+            <h3>Vitamina C 1g</h3>
+            <p>Reforce sua imunidade diariamente.</p>
+            <button>Ver mais</button>
+        </div>
+
+        <div class="produto">
+            <img src="{{ url_for('static', filename='img/alcoolgel.png') }}" alt="Álcool em Gel">
+            <h3>Álcool em Gel 70%</h3>
+            <p>Proteção prática para o dia a dia.</p>
+            <button>Ver mais</button>
+        </div>
+
+        <div class="produto">
+            <img src="{{ url_for('static', filename='img/vitaminab12.png') }}" alt="vitamina B12">
+            <h3>Vitamina B12</h3>
+            <p></p>
+            <button>Ver mais</button>
+        </div>
+        <div class="produto">
+            <img src="{{ url_for('static', filename='img/huggies.jpeg') }}" alt="Fraldas huggies">
+            <h3>Fraldas huggies</h3>
+            <p></p>
+            <button>Ver mais</button>
+        </div>
+        <div class="produto">
+            <img src="{{ url_for('static', filename='img/pampers.jpeg') }}" alt="Fraldas pampers">
+            <h3>Fraldas pampers</h3>
+            <p></p>
+            <button>Ver mais</button>
+        </div>
+    </div>
 {% endblock %}
