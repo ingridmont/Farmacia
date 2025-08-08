@@ -129,4 +129,3 @@ def pagina_nao_encontrada(error):
 @app.errorhandler(500)
 def erro_interno(error):
     return render_template('500.html'), 500
-
