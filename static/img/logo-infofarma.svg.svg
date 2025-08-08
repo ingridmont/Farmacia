@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="60" viewBox="0 0 180 60" fill="none">
+  <!-- Cruz verde -->
+  <rect x="5" y="20" width="12" height="20" fill="#1A7F37"></rect>
+  <rect x="0" y="27" width="24" height="6" fill="#1A7F37"></rect>
+  
+  <!-- Texto InfoFarma -->
+  <text x="40" y="45" font-family="Segoe UI, Tahoma, Geneva, Verdana, sans-serif" font-size="32" font-weight="700" fill="#8FC93A" letter-spacing="1">
+    InfoFarma
+  </text>
+</svg>
