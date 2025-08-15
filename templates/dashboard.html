@@ -12,13 +12,13 @@
           <a href="#" class="dashboard__nav-link active">Início</a>
         </li>
         <li class="dashboard__nav-item">
-          <a href="#" class="dashboard__nav-link">Produtos</a>
+          <a href="#produtos" class="dashboard__nav-link">Produtos</a>
         </li>
         <li class="dashboard__nav-item">
-          <a href="#" class="dashboard__nav-link">Dicas de Saúde</a>
+          <a href="#dicas" class="dashboard__nav-link">Dicas de Saúde</a>
         </li>
         <li class="dashboard__nav-item">
-          <a href="#" class="dashboard__nav-link">Contato</a>
+          <a href="#contato" class="dashboard__nav-link">Contato</a>
         </li>
       </ul>
     </nav>
@@ -53,41 +53,51 @@
         sempre prezando pela qualidade, segurança e atendimento especializado.
         Nosso time de farmacêuticos está à disposição para tirar dúvidas e orientar o uso correto dos medicamentos.
       </p>
-      <img src="/static/img/farmacia-1280x640.jpg" alt="Interior da InfoFarma" style="width: 100%; max-height: 360px; object-fit: cover; border-radius: 8px; margin-top: 16px;" />
+      <img src="/static/img/farmacia-1280x640.jpg" alt="Interior da InfoFarma" class="img-banner" />
     </section>
 
-    <section style="margin-top: 40px;">
+    <section id="produtos">
       <h3>Produtos Exclusivos para Você</h3>
-      <div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; margin-top: 20px;">
-        <div style="background: white; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); width: 260px; padding: 15px; text-align: center; transition: transform 0.3s ease;">
-          <img src="/static/img/produto-vitamina-c.jpg" alt="Vitamina C 500mg" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px; margin-bottom: 15px;" />
-          <h4 style="color: #2e7d32; margin-bottom: 10px;">Vitamina C 500mg</h4>
-          <p style="color: #555; margin-bottom: 15px;">Fortalece o sistema imunológico e combate os radicais livres.</p>
-          <button style="background: #2e7d32; color: white; border: none; padding: 10px 20px; border-radius: 12px; font-weight: bold; cursor: pointer; transition: background 0.3s ease;">Comprar</button>
+      <div class="produtos">
+        <div class="produto">
+          <img src="/static/img/produto-vitamina-c.jpg" alt="Vitamina C 500mg" />
+          <h3>Vitamina C 500mg</h3>
+          <p>Fortalece o sistema imunológico e combate os radicais livres.</p>
+          <button>Comprar</button>
         </div>
-        <div style="background: white; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); width: 260px; padding: 15px; text-align: center; transition: transform 0.3s ease;">
-          <img src="/static/img/produto-oleo-de-coco.jpg" alt="Óleo de Coco Orgânico" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px; margin-bottom: 15px;" />
-          <h4 style="color: #2e7d32; margin-bottom: 10px;">Óleo de Coco Orgânico</h4>
-          <p style="color: #555; margin-bottom: 15px;">Produto natural para cuidados com a pele e cabelos.</p>
-          <button style="background: #2e7d32; color: white; border: none; padding: 10px 20px; border-radius: 12px; font-weight: bold; cursor: pointer; transition: background 0.3s ease;">Comprar</button>
+        <div class="produto">
+          <img src="/static/img/produto-oleo-de-coco.jpg" alt="Óleo de Coco Orgânico" />
+          <h3>Óleo de Coco Orgânico</h3>
+          <p>Produto natural para cuidados com a pele e cabelos.</p>
+          <button>Comprar</button>
         </div>
-        <div style="background: white; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); width: 260px; padding: 15px; text-align: center; transition: transform 0.3s ease;">
-          <img src="/static/img/produto-mel.jpg" alt="Mel Puro" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px; margin-bottom: 15px;" />
-          <h4 style="color: #2e7d32; margin-bottom: 10px;">Mel Puro</h4>
-          <p style="color: #555; margin-bottom: 15px;">Fonte natural de energia e antioxidantes.</p>
-          <button style="background: #2e7d32; color: white; border: none; padding: 10px 20px; border-radius: 12px; font-weight: bold; cursor: pointer; transition: background 0.3s ease;">Comprar</button>
+        <div class="produto">
+          <img src="/static/img/produto-mel.jpg" alt="Mel Puro" />
+          <h3>Mel Puro</h3>
+          <p>Fonte natural de energia e antioxidantes.</p>
+          <button>Comprar</button>
         </div>
       </div>
     </section>
 
-    <section style="margin-top: 40px;">
+    <section id="dicas">
       <h3>Dicas para uma Vida Saudável</h3>
-      <ul style="color: #555; line-height: 1.5; margin-top: 10px;">
+      <ul class="lista-dicas">
         <li>Consulte sempre um profissional antes de iniciar qualquer tratamento.</li>
         <li>Mantenha uma alimentação equilibrada e pratique atividades físicas regularmente.</li>
         <li>Evite automedicação e siga sempre a prescrição médica.</li>
         <li>Armazene os medicamentos corretamente, longe do calor e umidade.</li>
       </ul>
+    </section>
+
+    <section id="contato">
+      <h3>Entre em Contato</h3>
+      <form>
+        <input type="text" placeholder="Seu nome" required />
+        <input type="email" placeholder="Seu e-mail" required />
+        <textarea placeholder="Sua mensagem" rows="4" required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
     </section>
 
   </main>
