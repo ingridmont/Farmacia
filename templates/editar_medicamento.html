@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 class="mb-3">Editar Medicamento</h2>
+
+    <form method="POST" class="card p-4 shadow-sm">
+        <div class="mb-3">
+            <label class="form-label">Nome:</label>
+            <input type="text" name="nome" value="{{ medicamento['nome'] }}" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Descrição:</label>
+            <textarea name="descricao" class="form-control">{{ medicamento['descricao'] }}</textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Atualizar</button>
+        <a href="{{ url_for('listar_medicamentos') }}" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>
+{% endblock %}
