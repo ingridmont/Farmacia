@@ -2,7 +2,7 @@
 {% block title %}Meu Perfil{% endblock %}
 
 {% block content %}
-<div class="perfil-container">
+
     <h2>Meu Perfil</h2>
 
     <div class="perfil-avatar">
@@ -22,6 +22,5 @@
         <form action="{{ url_for('excluir_conta') }}" method="POST" onsubmit="return confirm('Tem certeza que deseja excluir sua conta?')">
             <button type="submit" class="btn-excluir">Excluir minha conta</button>
         </form>
-    </div>
 </div>
 {% endblock %}
