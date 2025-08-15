@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}Promoções - InfoFarma{% endblock %}
+
+{% block content %}
+
+  <h1 class="produtos-title">🔥 Promoções InfoFarma</h1>
+  <p class="produtos-subtitle">Aproveite os descontos especiais em nossos produtos para sua saúde e bem-estar:</p>
+
+  <h2 class="produtos-section-title">Ofertas Imperdíveis</h2>
+  <div class="produtos">
+    <div class="produto">
+      <img src="{{ url_for('static', filename='img/remedio1.png') }}" alt="Analgésico">
+      <h3>Analgésico 500mg</h3>
+      <p><del>R$ 25,00</del> <strong>R$ 18,00</strong></p>
+      <button>Ver mais</button>
+    </div>
+    <div class="produto">
+      <img src="{{ url_for('static', filename='img/vitamina.png') }}" alt="Vitamina C">
+      <h3>Vitamina C 1g</h3>
+      <p><del>R$ 30,00</del> <strong>R$ 22,50</strong></p>
+      <button>Ver mais</button>
+    </div>
+    <div class="produto">
+      <img src="{{ url_for('static', filename='img/alcoolgel.png') }}" alt="Álcool em Gel">
+      <h3>Álcool em Gel 70%</h3>
+      <p><del>R$ 15,00</del> <strong>R$ 10,00</strong></p>
+      <button>Ver mais</button>
+    </div>
+    <div class="produto">
+      <img src="{{ url_for('static', filename='img/pampers.jpeg') }}" alt="Fraldas Pampers">
+      <h3>Fraldas Pampers</h3>
+      <p><del>R$ 80,00</del> <strong>R$ 65,00</strong></p>
+      <button>Ver mais</button>
+    </div>
+
+</div>
+{% endblock %}
