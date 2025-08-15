@@ -129,3 +129,15 @@ def pagina_nao_encontrada(error):
 @app.errorhandler(500)
 def erro_interno(error):
     return render_template('500.html'), 500
+
+@app.route("/produtos")
+def produtos():
+    return render_template("produtos.html")
+
+@app.route('/promocoes')
+def promocoes():
+    return render_template('promocoes.html')
+
+@app.route('/sobre')
+def sobre():
+    return render_template('sobre.html')
