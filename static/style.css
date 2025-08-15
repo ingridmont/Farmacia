@@ -1,4 +1,3 @@
-/* --- SEU CSS BASE (tudo que você enviou) --- */
 
 * {
     margin: 0;
@@ -134,19 +133,39 @@ h1, h2, h3 {
     padding: 15px;
     text-align: center;
     transition: transform 0.2s ease-in-out, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
-
 .produto:hover {
     transform: translateY(-6px);
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
 }
 
+.container.produtos-container {
+  max-width: 100%;
+  margin: 20px auto;
+  padding: 20px 40px; /* Mais padding nas laterais */
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Ajuste do flex dos produtos para ocupar melhor o espaço */
+.produtos {
+  justify-content: space-around; /* em vez de center */
+  gap: 30px;
+  margin-top: 30px;
+}
+
+
 .produto img {
     width: 100%;
-    height: 200px;
-    object-fit: cover;
+    height: 180px;         
+    object-fit: contain;   
     border-radius: 8px;
     margin-bottom: 15px;
+    background-color: #fff; 
 }
 
 .produto h3 {
