@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+{% block title %}Dashboard - InfoFarma{% endblock %}
+
+{% block content %}
+<div class="dashboard">
+
+  <aside class="dashboard__sidebar">
+    <div class="dashboard__sidebar-logo">InfoFarma</div>
+    <nav>
+      <ul class="dashboard__nav">
+        <li class="dashboard__nav-item">
+          <a href="#" class="dashboard__nav-link active">Início</a>
+        </li>
+        <li class="dashboard__nav-item">
+          <a href="#produtos" class="dashboard__nav-link">Produtos</a>
+        </li>
+        <li class="dashboard__nav-item">
+          <a href="#dicas" class="dashboard__nav-link">Dicas de Saúde</a>
+        </li>
+        <li class="dashboard__nav-item">
+          <a href="#contato" class="dashboard__nav-link">Contato</a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+
+  <main class="dashboard__content">
+
+    <header class="dashboard__header">
+      <h2>Olá, {{ current_user.nome if current_user.is_authenticated else 'Visitante' }}!</h2>
+    </header>
+
+    <section class="dashboard__cards">
+      <div class="dashboard__card">
+        <h3>Bem-vindo à InfoFarma</h3>
+        <p>Seu painel exclusivo com produtos e conteúdos para cuidar melhor da sua saúde.</p>
+      </div>
+      <div class="dashboard__card">
+        <h3>Suporte ao Cliente</h3>
+        <p>Precisa de ajuda? Nosso time está à disposição para orientar você.</p>
+      </div>
+      <div class="dashboard__card">
+        <h3>Novidades</h3>
+        <p>Confira as promoções e novidades que preparamos para você.</p>
+      </div>
+    </section>
+
+    <section>
+      <h3>Sobre a InfoFarma</h3>
+      <p>
+        A InfoFarma é uma farmácia comprometida com a saúde e bem-estar de seus clientes.
+        Trabalhamos com uma ampla gama de medicamentos, produtos naturais e itens de cuidado pessoal,
+        sempre prezando pela qualidade, segurança e atendimento especializado.
+        Nosso time de farmacêuticos está à disposição para tirar dúvidas e orientar o uso correto dos medicamentos.
+      </p>
+      <img src="/static/img/farmacia-1280x640.jpg" alt="Interior da InfoFarma" class="img-banner" />
+    </section>
+
+    <section id="produtos">
+      <h3>Produtos Exclusivos para Você</h3>
+      <div class="produtos">
+        <div class="produto">
+          <img src="/static/img/produto-vitamina-c.jpg" alt="Vitamina C 500mg" />
+          <h3>Vitamina C 500mg</h3>
+          <p>Fortalece o sistema imunológico e combate os radicais livres.</p>
+          <button>Comprar</button>
+        </div>
+        <div class="produto">
+          <img src="/static/img/produto-oleo-de-coco.jpg" alt="Óleo de Coco Orgânico" />
+          <h3>Óleo de Coco Orgânico</h3>
+          <p>Produto natural para cuidados com a pele e cabelos.</p>
+          <button>Comprar</button>
+        </div>
+        <div class="produto">
+          <img src="/static/img/produto-mel.jpg" alt="Mel Puro" />
+          <h3>Mel Puro</h3>
+          <p>Fonte natural de energia e antioxidantes.</p>
+          <button>Comprar</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="dicas">
+      <h3>Dicas para uma Vida Saudável</h3>
+      <ul class="lista-dicas">
+        <li>Consulte sempre um profissional antes de iniciar qualquer tratamento.</li>
+        <li>Mantenha uma alimentação equilibrada e pratique atividades físicas regularmente.</li>
+        <li>Evite automedicação e siga sempre a prescrição médica.</li>
+        <li>Armazene os medicamentos corretamente, longe do calor e umidade.</li>
+      </ul>
+    </section>
+
+    <section id="contato">
+      <h3>Entre em Contato</h3>
+      <form>
+        <input type="text" placeholder="Seu nome" required />
+        <input type="email" placeholder="Seu e-mail" required />
+        <textarea placeholder="Sua mensagem" rows="4" required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+
+  </main>
+</div>
+{% endblock %}
