@@ -1,4 +1,3 @@
-# app.py
 from flask import Flask, render_template, request, redirect, url_for, flash, make_response
 from flask_login import LoginManager, login_user, logout_user, login_required, current_user
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -122,13 +121,81 @@ def excluir_conta():
     flash('Sua conta foi excluída com sucesso.', 'success')
     return redirect(url_for('index'))
 
-@app.errorhandler(404)
-def pagina_nao_encontrada(error):
-    return render_template('404.html'), 404
 
-@app.errorhandler(500)
-def erro_interno(error):
-    return render_template('500.html'), 500
+@app.route('/medicamentos')
+@login_required
+def listar_medicamentos():
+    conn = obter_conexao()
+    medicamentos = conn.execute(
+        "SELECT * FROM medicamentos WHERE user_id = ?",
+        (current_user.id,)
+    ).fetchall()
+    conn.close()
+    return render_template('medicamentos.html', medicamentos=medicamentos)
+
+@app.route('/medicamentos/novo', methods=['GET', 'POST'])
+@login_required
+def novo_medicamento():
+    if request.method == 'POST':
+        nome = request.form['nome']
+        descricao = request.form['descricao']
+
+        conn = obter_conexao()
+        conn.execute(
+            "INSERT INTO medicamentos (nome, descricao, user_id) VALUES (?, ?, ?)",
+            (nome, descricao, current_user.id)
+        )
+        conn.commit()
+        conn.close()
+
+        flash('Medicamento adicionado com sucesso!', 'success')
+        return redirect(url_for('listar_medicamentos'))
+    return render_template('novo_medicamento.html')
+
+@app.route('/medicamentos/<int:id>/editar', methods=['GET', 'POST'])
+@login_required
+def editar_medicamento(id):
+    conn = obter_conexao()
+    medicamento = conn.execute(
+        "SELECT * FROM medicamentos WHERE id = ? AND user_id = ?",
+        (id, current_user.id)
+    ).fetchone()
+
+    if not medicamento:
+        conn.close()
+        flash('Medicamento não encontrado.', 'error')
+        return redirect(url_for('listar_medicamentos'))
+
+    if request.method == 'POST':
+        nome = request.form['nome']
+        descricao = request.form['descricao']
+
+        conn.execute(
+            "UPDATE medicamentos SET nome = ?, descricao = ? WHERE id = ? AND user_id = ?",
+            (nome, descricao, id, current_user.id)
+        )
+        conn.commit()
+        conn.close()
+
+        flash('Medicamento atualizado!', 'success')
+        return redirect(url_for('listar_medicamentos'))
+
+    conn.close()
+    return render_template('editar_medicamento.html', medicamento=medicamento)
+
+@app.route('/medicamentos/<int:id>/excluir', methods=['POST'])
+@login_required
+def excluir_medicamento(id):
+    conn = obter_conexao()
+    conn.execute(
+        "DELETE FROM medicamentos WHERE id = ? AND user_id = ?",
+        (id, current_user.id)
+    )
+    conn.commit()
+    conn.close()
+
+    flash('Medicamento excluído!', 'success')
+    return redirect(url_for('listar_medicamentos'))
 
 @app.route("/produtos")
 def produtos():
@@ -141,3 +208,12 @@ def promocoes():
 @app.route('/sobre')
 def sobre():
     return render_template('sobre.html')
+
+@app.errorhandler(404)
+def pagina_nao_encontrada(error):
+    return render_template('404.html'), 404
+
+@app.errorhandler(500)
+def erro_interno(error):
+    return render_template('500.html'), 500
+
