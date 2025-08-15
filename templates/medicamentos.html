@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 class="mb-3">Meus Medicamentos</h2>
+
+    <a href="{{ url_for('novo_medicamento') }}" class="btn btn-success mb-3">
+        <i class="bi bi-plus-circle"></i> Novo Medicamento
+    </a>
+
+    {% if medicamentos %}
+        <table class="table table-striped table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th>Nome</th>
+                    <th>Descrição</th>
+                    <th style="width: 180px;">Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for m in medicamentos %}
+                <tr>
+                    <td>{{ m['nome'] }}</td>
+                    <td>{{ m['descricao'] }}</td>
+                    <td>
+                        <a href="{{ url_for('editar_medicamento', id=m['id']) }}" class="btn btn-primary btn-sm">Editar</a>
+                        <form action="{{ url_for('excluir_medicamento', id=m['id']) }}" method="POST" style="display:inline;">
+                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Tem certeza que deseja excluir?')">Excluir</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <div class="alert alert-info">Nenhum medicamento cadastrado.</div>
+    {% endif %}
+</div>
+{% endblock %}
